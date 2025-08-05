@@ -1,0 +1,21 @@
+You can look at or even adapt your old BST program for this.
+
+Here, we don't need to support remove (just insert) so it may
+be simpler to start from scratch.
+
+Normally when we do this in the field, we would include a balance
+factor and height field with each node to help insure that we
+can implement everything in O(log n) time.  As I noted in lecture,
+when you are struggling with the other parts of this Lab, having
+an incorrect height makes everything break.  So, I hereby grant
+you permession to use a "computed height" as the basis for
+your balance factor computations.
+
+This makes inserts take longer (both in runtime and in complexity
+time) since we changed a pretty simple O(log n) tree descent with
+some rotations into a O(n log n) one (since each height computation
+is O(n)... we'll talk about it in lecture).
+
+As you write your code, you should think about what you would need
+to do to actually maintain this value properly (hint, hint: I've
+asked about this on quizzes and finals).
