@@ -1,0 +1,8 @@
+You can make a smaller sample fie with
+% python3 sample.py
+
+Just make a copy of movieReviews.txt and replace it with sample.txt
+% cp movieReviews.txt movieReviews.txt.sav
+% mv sample.txt movieReviews.txt
+
+Most of the helpful instructions are embedded in the source code
