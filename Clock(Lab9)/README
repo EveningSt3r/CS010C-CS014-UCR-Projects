@@ -1,0 +1,46 @@
+There are instructions in main.cpp on what to do...
+
+Basically, try to run it "as is" to get a feel for doing some timings.
+
+If you are compiling locally, you might have to delete these lines:
+
+#include <chrono>
+using std::chrono::steady_clock;
+using std::chrono::microseconds;
+using std::chrono::time_point;
+using std::chrono::high_resolution_clock;
+using std::chrono::duration_cast;
+
+and where you see
+
+      // CODETURD: Pick one timing scheme or the other and remove
+      // CODETURD: the one you don't use
+      time_point<steady_clock> start = high_resolution_clock::now();
+      // clock_t Start = clock();
+      BubbleSort(test_array, size);
+      // clock_t End = clock();
+      // int elapsedTime = (End - Start)/CLOCKS_PER_MS;
+      // cout << elapsedTime << " ms" << endl;
+
+      time_point<steady_clock> stop = high_resolution_clock::now();
+      microseconds duration = duration_cast<microseconds>(stop - start);
+      cout << duration.count() << " ms for bubble sort " << endl;
+
+get rid of the steady_clock lines and uncomment the elapsedTime lines (old school)
+
+         clock_t Start = clock();
+         BubbleSort(test_array, size);
+         clock_t End = clock();
+         int elapsedTime = (End - Start)/CLOCKS_PER_MS;
+         cout << elapsedTime << " ms" << endl;
+
+or leave it new school
+
+      time_point<steady_clock> start = high_resolution_clock::now();
+      BubbleSort(test_array, size);
+
+      time_point<steady_clock> stop = high_resolution_clock::now();
+      microseconds duration = duration_cast<microseconds>(stop - start);
+      cout << duration.count() << " ms for bubble sort " << endl;
+
+but in either case, remove the code turds!
