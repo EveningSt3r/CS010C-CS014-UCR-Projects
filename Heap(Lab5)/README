@@ -1,0 +1,18 @@
+Your Heap class implements a small heap (10 items).  Notice that the
+array holds PrintJob* values.  In some sense, once you enqueue a print
+job, then the heap "owns" it (and is now responsible for deleting it!).
+Be sure to take that into account in your destructor!
+
+The highest() method is pretty easy.  It returns the root (since it has
+the highest priority).
+
+To enqueue a print job, we add it at the end of the current heap array
+(the numItems tells us where that is -- or if it might overflow).  Once
+there, we have to percolate that value UP towards the root until the
+heap is restored.
+
+Similarly, when we dequeue an item, we swap the last good item with the
+root; and then percolate that new root value DOWN until the heap is restored.
+
+The print() method just grabs the highest print job (can it call highest as
+the starter method is currently written?) and prints it out.
